@@ -1,0 +1,21 @@
+<h1>Add medicine</h1>
+
+<form #recievedMedicine="ngForm">
+
+  <label for="name">Name (required)</label>
+  <input type="text" class="form-control" id="name" placeholder="medicine name" [(ngModel)]="medicine.name" name="name" >
+
+  <label for="company">Company</label>
+  <input type="text" class="form-control" id="company" placeholder="medicine name" [(ngModel)]="medicine.company" name="company">
+
+  <label for="price">Price</label>
+  <input type="price" class="form-control" id="price" placeholder="price" [(ngModel)]="medicine.price" name="price">
+
+  <div class="form-group" *ngIf="medicine.id == null">
+    <br>
+    <input type="file" (change)="onFileChanged($event)">
+    <img [src]="imgURL" height="200" width="200" *ngIf="imgURL">
+</div>
+  <br>
+  <button type="button" class="btn btn-success" (click)="saveMedicine()">Save Medicine</button>
+</form>

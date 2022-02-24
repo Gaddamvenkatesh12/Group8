@@ -1,0 +1,31 @@
+<div align="right"> 
+  <a class="btn btn-small btn-primary" routerLink="/login">Logout</a>
+</div>
+<h1>Medicines Admin</h1>
+<a class="btn btn-primary mb-3" (click)="addMedicine()">Add New Medicine</a>
+<div class="container row">
+  <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Medicine Name</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let medicine of medicines">
+          <td>{{medicine.id}}</td>
+          <td>{{medicine.name}}</td>
+          <td>
+            <button type="button" class="btn btn-primary" (click)="viewMedicine(medicine.id)">Show Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <app-viewmedicine *ngIf="action === 'view'" [medicine]="selectedMedicine" (medicineDeletedEvent)="refreshData()"></app-viewmedicine>
+    <app-addmedicine *ngIf="action === 'edit' || action === 'add'" [medicine]="selectedMedicine" (medicineAddedEvent)="refreshData()"></app-addmedicine>
+  </div>
+</div>

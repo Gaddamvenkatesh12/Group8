@@ -1,0 +1,135 @@
+<div align="right"> 
+    <a class="btn btn-small btn-primary" routerLink="/login" (click)="emptyCart()" >Logout</a>
+  </div>
+<h1>Order List</h1>
+<div class="container row">
+  <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Medicine Name</th>
+          <th>Medicine Price</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cartMedicines">
+          <td>{{item.name}}</td>
+          <td>{{item.price}}</td>         
+        </tr>
+      </tbody>
+    </table>
+    <hr>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <div>
+     
+
+      <ul class="navbar-nav">
+          <li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  Payment Mode
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <button class="dropdown-item" (click)="payment()">UPI</button>
+                  <button class="dropdown-item" (click)="payment()">DEBIT/CREDIT CARD</button>
+                  <button class="dropdown-item" (click)="payment()">CASH ON DELIVERY</button>
+
+                  </div>
+                  </li>
+                  </ul>
+                  </div>
+                  </nav>
+  <!--- <li><a class="btn btn-small btn-success" >Payment</a></li>-->
+  </div>
+  <hr>
+ 
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="container row">
+    
+    <div class="col-md-10 custom-products-cart-container">
+        <div class="offset-md-2">
+            
+
+                <table class="table">
+                  
+                   
+                          <h1>OrderList</h1> 
+                     
+                       
+                   
+                        <table *ngFor="let item of cartMedicines">
+
+                            <thead>
+                                <tr>
+                                  <th>ID</th>
+                                  <th>Medicine Name</th>
+                                  <th></th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                
+                                  <td *ngIf="item">{{item.id}}</td>
+                                  <td *ngIf="item">{{item.name}}</td>
+                                 
+                               
+                              </tbody>
+                           -- <div class="item product-cart-item row">
+                                <div class="col-md-8" *ngIf="item">{{item.name}}</div>
+                                <div class="col-md-4" *ngIf="item"><strong>${{item.price}}</strong></div>
+                            </div>
+                        </table>
+                        <hr>
+                        <li><a class="btn btn-small btn-success" >Payment</a></li>
+                        <br>
+                        </table>
+                        </div>
+                        </div>
+                        </div>
+                    -->
+                        
+                     <!----   <li *ngIf="cartMedicines.length > 0">
+                            <a class="btn btn-small btn-warning" role="button" (click)="emptyCart()">Empty Cart</a></li>
+                     -->
+                
+            
+       
+    
+
+
+
+
+
+
+
+
