@@ -41,11 +41,10 @@ export class MedicinesComponent implements OnInit {
     );
    }
  
-   // we will be taking the books response returned from the database
-  // and we will be adding the retrieved   
+     
   handleSuccessfulResponse(response) {
     this.medicines = new Array<Medicine>();
-    //get books returned by the api call
+    
     this.medicinesRecieved = response;
     for (const medicine of this.medicinesRecieved) {
     
